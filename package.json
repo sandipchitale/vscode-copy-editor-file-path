@@ -1,0 +1,214 @@
+{
+    "name": "vscode-copy-editor-file-path",
+    "displayName": "Copy path of editor file",
+    "icon": "images/icon.png",
+    "description": "VS Code extention to copy path of editor file.",
+    "version": "1.0.7",
+    "publisher": "sandipchitale",
+    "author": {
+        "name": "Sandip Chitale"
+    },
+    "maintainers": [
+        "Sandip Chitale <sandipchitale@gmail.com>"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sandipchitale/vscode-copy-editor-file-path"
+    },
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:copy-editor-file-name.copy",
+        "onCommand:copy-editor-file-name-sans-extension.copy",
+        "onCommand:copy-editor-file-uri-name.copy",
+        "onCommand:copy-editor-file-uri-name-sans-extension.copy",
+        "onCommand:copy-editor-file-path.copy",
+        "onCommand:copy-editor-file-path.copySlashes",
+        "onCommand:copy-editor-file-path.copyBackslashes",
+        "onCommand:copy-editor-file-path.copyParentPath",
+        "onCommand:copy-editor-file-path.copyParentPathSlashes",
+        "onCommand:copy-editor-file-path.copyParentPathBackslashes",
+        "onCommand:copy-editor-file-path.copyParentPathEditorTitle",
+        "onCommand:copy-editor-file-path.copyParentPathSlashesEditorTitle",
+        "onCommand:copy-editor-file-path.copyParentPathBackslashesEditorTitle"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "copy-editor-file-name.copy",
+                "title": "Copy Name"
+            },
+            {
+                "command": "copy-editor-file-name-sans-extension.copy",
+                "title": "Copy Name sans extension"
+            },
+            {
+                "command": "copy-editor-file-uri-name.copy",
+                "title": "Copy Name"
+            },
+            {
+                "command": "copy-editor-file-uri-name-sans-extension.copy",
+                "title": "Copy Name sans extension"
+            },
+            {
+                "command": "copy-editor-file-path.copy",
+                "title": "Copy Path"
+            },
+            {
+                "command": "copy-editor-file-path.copySlashes",
+                "title": "Copy Path (Slashes)"
+            },
+            {
+                "command": "copy-editor-file-path.copyBackslashes",
+                "title": "Copy Path (Backslashes)"
+            },
+            {
+                "command": "copy-editor-file-path.copyParentPath",
+                "title": "Copy Parent Paths..."
+            },
+            {
+                "command": "copy-editor-file-path.copyParentPathSlashes",
+                "title": "Copy Parent Paths (Slashes)..."
+            },
+            {
+                "command": "copy-editor-file-path.copyParentPathBackslashes",
+                "title": "Copy Parent Paths (Backslashes)..."
+            },
+            {
+                "command": "copy-editor-file-path.copyParentPathEditorTitle",
+                "title": "Copy Parent Paths..."
+            },
+            {
+                "command": "copy-editor-file-path.copyParentPathSlashesEditorTitle",
+                "title": "Copy Parent Paths (Slashes)..."
+            },
+            {
+                "command": "copy-editor-file-path.copyParentPathBackslashesEditorTitle",
+                "title": "Copy Parent Paths (Backslashes)..."
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "copy-editor-file-path.copy",
+                "key": "shift+alt+C",
+                "mac": "shift+option+C",
+                "when": "editorTextFocus"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "copy-editor-file-path.copy",
+                    "group": "9_cutcopypaste@4",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "copy-editor-file-path.copySlashes",
+                    "group": "9_cutcopypaste@5",
+                    "when": "resourceScheme == file && isWindows"
+                },
+                {
+                    "command": "copy-editor-file-path.copyBackslashes",
+                    "group": "9_cutcopypaste@5",
+                    "when": "resourceScheme == file && !isWindows"
+                },
+                {
+                    "command": "copy-editor-file-name.copy",
+                    "group": "9_cutcopypaste@6",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "copy-editor-file-name-sans-extension.copy",
+                    "group": "9_cutcopypaste@7",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "copy-editor-file-path.copyParentPath",
+                    "group": "9_cutcopypaste@9",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "copy-editor-file-path.copyParentPathSlashes",
+                    "group": "9_cutcopypaste@8",
+                    "when": "resourceScheme == file && isWindows"
+                },
+                {
+                    "command": "copy-editor-file-path.copyParentPathBackslashes",
+                    "group": "9_cutcopypaste@8",
+                    "when": "resourceScheme == file && !isWindows"
+                }
+            ],
+            "editor/title/context": [
+                {
+                    "command": "copy-editor-file-uri-name.copy",
+                    "group": "1_cutcopypaste@100",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "copy-editor-file-uri-name-sans-extension.copy",
+                    "group": "1_cutcopypaste@100",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "copy-editor-file-path.copyParentPathEditorTitle",
+                    "group": "1_cutcopypaste@100",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "copy-editor-file-path.copyParentPathSlashesEditorTitle",
+                    "group": "1_cutcopypaste@100",
+                    "when": "resourceScheme == file && isWindows"
+                },
+                {
+                    "command": "copy-editor-file-path.copyParentPathBackslashesEditorTitle",
+                    "group": "1_cutcopypaste@100",
+                    "when": "resourceScheme == file && !isWindows"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "command": "copy-editor-file-uri-name.copy",
+                    "group": "6_copypath@100",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "copy-editor-file-uri-name-sans-extension.copy",
+                    "group": "6_copypath@100",
+                    "when": "resourceScheme == file"
+                },
+                {
+                    "command": "copy-editor-file-path.copyParentPathBackslashes",
+                    "group": "6_copypath@100",
+                    "when": "!isWindows"
+                },
+                {
+                    "command": "copy-editor-file-path.copyParentPath",
+                    "group": "6_copypath@100"
+                },
+                {
+                    "command": "copy-editor-file-path.copyParentPathSlashes",
+                    "group": "6_copypath@100",
+                    "when": "isWindows"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
